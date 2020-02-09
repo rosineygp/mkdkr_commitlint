@@ -2,6 +2,7 @@ include $(shell bash .mkdkr init)
 
 PROJECT=rosiney
 REPOS=mkdkr_commitlint
+MKDKR_COMMITLINT_TAG=$(MKDKR_BRANCH_NAME_SLUG)
 
 build:
 	$(docker_build)
