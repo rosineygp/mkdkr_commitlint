@@ -11,6 +11,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: build
       run: make build
+    - name: self-include
+      run: make self-include
+    - name: commitlint
+      run: make commitlint MKDKR_COMMITLINT_TAG=$MKDKR_BRANCH_NAME_SLUG
     - name: push
       run: make push
       env:
