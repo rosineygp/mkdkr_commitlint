@@ -4,13 +4,17 @@ on: [push]
 
 jobs:
   pipeline:
-
     runs-on: ubuntu-18.04
-
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
     - name: build
       run: make build
+    - name: commitlint
+      run: |
+        make self-include
+        make commitlint
     - name: push
       run: make push
       env:
