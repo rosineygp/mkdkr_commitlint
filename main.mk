@@ -1,9 +1,9 @@
 MKDKR_COMMITLINT_TAG=latest
 
 commitlint:
-	@$(.)
-	... rosiney/mkdkr_commitlint:$(MKDKR_COMMITLINT_TAG)
+	@$(dkr)
+	instance: rosiney/mkdkr_commitlint:$(MKDKR_COMMITLINT_TAG)
 	@if [ ! -f commitlint.config.js ]; then \
 		echo "module.exports = {extends: ['@commitlint/config-conventional']}" > commitlint.config.js; \
 	fi
-	.. commitlint --from=HEAD~1 --verbose
+	run: commitlint --from=HEAD~1 --verbose
