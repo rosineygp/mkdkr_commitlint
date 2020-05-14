@@ -14,7 +14,7 @@ jobs:
     - name: commitlint
       run: |
         make self-include
-        make commitlint
+        make lint.commit
     - name: push
       run: make push
       env:

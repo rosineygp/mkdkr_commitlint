@@ -1,6 +1,6 @@
 MKDKR_COMMITLINT_TAG=latest
 
-commitlint:
+lint.commit:
 	@$(dkr)
 	instance: rosiney/mkdkr_commitlint:$(MKDKR_COMMITLINT_TAG)
 	@if [ ! -f commitlint.config.js ]; then \
